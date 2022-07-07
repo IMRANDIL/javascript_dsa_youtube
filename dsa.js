@@ -42,4 +42,47 @@ const checkDuplicateFine = (arr) => {
   return false;
 };
 
-console.log(checkDuplicateFine(array1));
+// console.log(checkDuplicateFine(array1));
+
+//We have been given 2 arrays, create a function that return true/false based on arrays contain any common items. if there is common element return true else return false....
+
+const checkCommonElem = (arr1, arr2) => {
+  for (let i = 0; i < arr1.length; i++) {
+    for (let j = 0; j < arr2.length; j++) {
+      if (arr1[i] === arr2[j]) {
+        return true;
+      }
+    }
+  }
+
+  return false;
+};
+
+//again this is timecomplexity...O(n^2)........
+
+// console.log(checkCommonElem(firstArr, secondArr));
+
+let firstArr = [1, 2, 3, 4];
+let secondArr = [5, 6, 2];
+
+const checkCommonElemFine = (array1, array2) => {
+  let obj = {};
+
+  for (let i = 0; i < array1.length; i++) {
+    if (!obj[array1[i]]) {
+      obj[i] = array1[i];
+    }
+  }
+
+  for (let comm in obj) {
+    if (array2.includes(obj[comm])) {
+      return true;
+    }
+  }
+
+  console.log(obj);
+
+  return false;
+};
+
+console.log(checkCommonElemFine(firstArr, secondArr));
