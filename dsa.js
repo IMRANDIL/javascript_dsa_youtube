@@ -86,3 +86,23 @@ const checkCommonElemFine = (array1, array2) => {
 };
 
 console.log(checkCommonElemFine(firstArr, secondArr));
+
+/* The two-sum problem is a question that asks that if given an array of integers (numbers), like [1, 2, 3], and a target sum number, such as 5, return an array of elements that add up to that target sum number. If no two numbers in the array add up to the target number, then we need to return an empty array; [].*/
+
+//two sum problem.....
+
+const sumArray = [2, 3, 4, 6, 8, 9];
+
+//example...you have to return the target number that adds to that target sum.....
+
+const targetSumProb = (arr, targetSum) => {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length; j++) {
+      if (arr[i] + arr[j] === targetSum) {
+        return [arr[i], arr[j]];
+      }
+    }
+  }
+
+  return [];
+};
