@@ -66,7 +66,7 @@ let firstArr = [1, 2, 3, 4];
 let secondArr = [5, 6, 2];
 
 const checkCommonElemFine = (array1, array2) => {
-  let obj = {};
+  let obj = {}; //space complexity is..O(n)..because we don't know what is the lenght of this object...
 
   for (let i = 0; i < array1.length; i++) {
     if (!obj[array1[i]]) {
