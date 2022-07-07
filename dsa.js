@@ -4,7 +4,7 @@
 
 // if yes..print yes....else print no.....
 
-let array1 = [1, 2, 3, 4, 5];
+let array1 = [1, 2, 3, 4, 5, 4, 5];
 
 const checkDuplicate = (arr) => {
   for (let i = 0; i < arr.length; i++) {
