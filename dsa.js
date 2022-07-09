@@ -107,4 +107,23 @@ const targetSumProb = (arr, targetSum) => {
   return [];
 };
 
-console.log(targetSumProb(sumArray, 12));
+// console.log(targetSumProb(sumArray, 12));
+
+//now optimize this sumprob...
+
+const targetSumProbFine = (arr, targetSum) => {
+  let obj = {};
+
+  for (let i = 0; i < arr.length; i++) {
+    const currentNumber = arr[i];
+    const neededValue = targetSum - currentNumber;
+    const index2 = obj[neededValue];
+    if (index2 != null) {
+      return [index2, i];
+    } else {
+      obj[currentNumber] = i;
+    }
+  }
+};
+
+console.log(targetSumProbFine(sumArray, 12));
