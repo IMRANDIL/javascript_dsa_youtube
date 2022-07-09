@@ -128,21 +128,24 @@ const targetSumProbFine = (arr, targetSum) => {
 
 // console.log(targetSumProbFine(sumArray, 12));
 
-//problem....In an array print 1st element occurring maximum number of time....
+//problem....In an array print element occurring maximum number of time....
 
-const maxOccurrArray = [3, 4, 8, 9, 2, 9, 9, 8];
+const maxOccurrArray = [3, 4, 8, 9, 2, 8, 9, 9];
 
 const findMaxOccurrNumber = (arr) => {
-  let count = 0;
-  for (let i = 0; i < arr.length; i++) {
-    for (let j = i + 1; j < arr.length; j++) {
-      if (arr[i] === arr[j]) {
-        count++;
-      }
+  const hashmap = arr.reduce((acc, elem) => {
+    acc[elem] = (acc[elem] || 0) + 1;
+    return acc;
+  }, {});
+
+  console.log(hashmap);
+
+  for (let num in hashmap) {
+    if (hashmap[num] > 2) {
+      return num;
     }
   }
-
-  console.log(count);
 };
 
-findMaxOccurrNumber(maxOccurrArray);
+// findMaxOccurrNumber(maxOccurrArray);
+console.log(findMaxOccurrNumber(maxOccurrArray));
