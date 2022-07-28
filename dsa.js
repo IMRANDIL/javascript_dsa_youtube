@@ -312,6 +312,13 @@ const targetSum = (arr, targetSum) => {
   let obj = {};
   for (let i = 0; i < arr.length; i++) {
     const currentNumber = arr[i];
+    const targetNumber = targetSum - currentNumber;
+    const index2 = obj[targetNumber];
+    if (index2 != null) {
+      return [index2, i];
+    } else {
+      obj[currentNumber] = i;
+    }
   }
 };
 
