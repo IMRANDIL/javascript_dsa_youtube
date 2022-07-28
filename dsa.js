@@ -309,15 +309,16 @@ const chainAsyncFunctions = async (functions) => {
 const targetSumArray = [3, 5, 8, 1, 15];
 
 const targetSum = (arr, targetSum) => {
-  let obj = {};
+  const previousValue = {};
   for (let i = 0; i < arr.length; i++) {
     const currentNumber = arr[i];
     const targetNumber = targetSum - currentNumber;
-    const index2 = obj[targetNumber];
+    const index2 = previousValue[targetNumber];
+    console.log(index2);
     if (index2 != null) {
       return [index2, i];
     } else {
-      obj[currentNumber] = i;
+      previousValue[currentNumber] = i;
     }
   }
 };
