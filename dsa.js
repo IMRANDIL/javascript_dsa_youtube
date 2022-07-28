@@ -209,3 +209,22 @@ const lineItems = [
 //While reduce() is used for summing, it doesn't have to be...
 
 //the accumulatior can be any value:number, null, undefined, array, pojo,even a promise...
+
+//for example, suppose you have an array of javascript dates, and you want to find the most recent date..
+
+const dates = ["2019/06/01", "2018/06/01", "2019/09/01", "2018/09/01"].map(
+  (v) => new Date(v)
+);
+
+// const sortedDates = dates.map((v) => new Date(v)).sort((a, b) => b - a);
+// console.log(sortedDates[0]);
+
+//that works, but isn't as efficient as it could be, and sorting an array of dates in javascript is no-trivial..
+
+//Instead you can use reduce() and make your reducer return the most recent date found so far..
+
+//using reduce it is cool man..
+
+const maxdate = dates.reduce((max, d) => (d > max ? d : max), dates[0]);
+
+// console.log(maxdate);
