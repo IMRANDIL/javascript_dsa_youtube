@@ -266,3 +266,5 @@ const reducer = (map, val) => {
 //       return acc;
 //     }, {})
 // );
+
+console.log(characters.map((char) => char.age).reduce(reducer, {}));
