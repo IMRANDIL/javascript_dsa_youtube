@@ -235,17 +235,17 @@ const maxdate = dates.reduce((max, d) => (d > max ? d : max), dates[0]);
 
 //Given an array of objects with an age property....
 
+//How do you retuurn a map that contains how many characters have a given age?....For example..
+
+// the correct output on the above array would be
+
 const characters = [
   { name: "ali", age: 30 },
   { name: "ahmed", age: 30 },
   { name: "denna", age: 51 },
 ];
 
-//How do you retuurn a map that contains how many characters have a given age?....For example..
-
-// the correct output on the above array would be
-
-// { 30: 2, 51: 1 }
+// { 30: 2, 51: 1 }..output
 
 //start with an empty object, increment map[age] for each element of the array...
 
@@ -258,6 +258,7 @@ const reducer = (map, val) => {
   return map;
 };
 
+//1st way....
 // console.log(
 //   characters
 //     .map((char) => char.age)
@@ -267,4 +268,42 @@ const reducer = (map, val) => {
 //     }, {})
 // );
 
-console.log(characters.map((char) => char.age).reduce(reducer, {}));
+//2nd way...
+// console.log(characters.map((char) => char.age).reduce(reducer, {}));
+
+//example 5...
+
+//Promise Chaining...
+
+//suppose you have an array of async functions that you want to execute in series...There
+// is a non standard promise.series function for this, but you can also do this with reduce()..
+
+const functions = [
+  async function () {
+    return 1;
+  },
+  async function () {
+    return 2;
+  },
+  async function () {
+    return 3;
+  },
+];
+
+//chain the function calls in order, starting with an
+// empty promise in the end, res is equivalent to ..
+
+//Promise.resolve().then(fn1).then(fn2).then(fn3)...
+const chainAsyncFunctions = async (functions) => {
+  const res = await functions.reduce(
+    (promise, fn) => promise.then(fn),
+    Promise.resolve()
+  );
+  return res;
+};
+
+// chainAsyncFunctions(functions).then((res) => console.log(res));
+
+//target sum prob again....
+
+const targetSumArray = [3, 5, 8, 1, 15];
