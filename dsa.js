@@ -322,4 +322,4 @@ const targetSum = (arr, targetSum) => {
   }
 };
 
-console.log(targetSum(targetSumArray, 23));
+console.log(targetSum(targetSumArray, 9));
