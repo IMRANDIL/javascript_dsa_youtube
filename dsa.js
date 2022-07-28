@@ -307,3 +307,12 @@ const chainAsyncFunctions = async (functions) => {
 //target sum prob again....
 
 const targetSumArray = [3, 5, 8, 1, 15];
+
+const targetSum = (arr, targetSum) => {
+  let obj = {};
+  for (let i = 0; i < arr.length; i++) {
+    const currentNumber = arr[i];
+  }
+};
+
+console.log(targetSum(targetSumArray, 23));
