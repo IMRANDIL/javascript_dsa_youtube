@@ -250,7 +250,7 @@ const characters = [
 //start with an empty object, increment map[age] for each element of the array...
 
 const reducer = (map, val) => {
-  if (map[val] === null) {
+  if (map[val] == null) {
     map[val] = 1;
   } else {
     ++map[val];
@@ -258,4 +258,11 @@ const reducer = (map, val) => {
   return map;
 };
 
-console.log(characters.map((char) => char.age));
+// console.log(
+//   characters
+//     .map((char) => char.age)
+//     .reduce((acc, elem) => {
+//       acc[elem] = (acc[elem] || 0) + 1;
+//       return acc;
+//     }, {})
+// );
