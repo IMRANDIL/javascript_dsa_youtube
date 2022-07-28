@@ -228,3 +228,21 @@ const dates = ["2019/06/01", "2018/06/01", "2019/09/01", "2018/09/01"].map(
 const maxdate = dates.reduce((max, d) => (d > max ? d : max), dates[0]);
 
 // console.log(maxdate);
+
+//example 4...
+
+//Grouping values.....
+
+//Given an array of objects with an age property....
+
+const characters = [
+  { name: "ali", age: 30 },
+  { name: "ahmed", age: 30 },
+  { name: "denna", age: 51 },
+];
+
+//How do you retuurn a map that contains how many characters have a given age?....For example..
+
+// the correct output on the above array would be
+
+// { 30: 2, 51: 1 }
