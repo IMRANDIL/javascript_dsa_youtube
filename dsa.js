@@ -246,3 +246,16 @@ const characters = [
 // the correct output on the above array would be
 
 // { 30: 2, 51: 1 }
+
+//start with an empty object, increment map[age] for each element of the array...
+
+const reducer = (map, val) => {
+  if (map[val] === null) {
+    map[val] = 1;
+  } else {
+    ++map[val];
+  }
+  return map;
+};
+
+console.log(characters.map((char) => char.age));
