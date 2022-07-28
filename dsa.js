@@ -148,4 +148,64 @@ const findMaxOccurrNumber = (arr) => {
 };
 
 // findMaxOccurrNumber(maxOccurrArray);
-console.log(findMaxOccurrNumber(maxOccurrArray));
+// console.log(findMaxOccurrNumber(maxOccurrArray));
+
+//understanding javascript reduce with 5 examples...
+
+//The reduce() method on  JavaScript arrays executes a 'reducer' function on every element of the array in order, passing the return value from the previous reducer call to the next reducer call.
+
+//Example 1:
+
+//Summing an Array of Numbers...
+
+//given an array of numbers [1,3,5,7], calculalte the sum.
+
+function sum(arr) {
+  let sum = 0;
+  for (const val of arr) {
+    sum += val;
+  }
+  return sum;
+}
+
+// console.log(sum([1, 3, 5, 7]));
+
+//now with reduce...
+
+function sum(arr) {
+  return arr.reduce((sum, elem) => sum + elem);
+}
+
+// console.log(sum([1, 3, 5, 7]));
+
+//summing an array of numeric properties...
+
+//The reduce function by itself is often more confusing than helpful. If all you need to do is sum an array of numbers, you might be beter off using a for loop...But, when combined with other array methods like filter() and map(), reduce starts looks more appealing..
+
+//Example 2:
+
+// For example, suppose you have an array of line items, and you want to calculate the sum of each line items's total property...
+
+const lineItems = [
+  { description: "Eggs(dozen)", quantity: 1, price: 3, total: 3 },
+  { description: "Cheese", quantity: 0.5, price: 5, total: 2.5 },
+  { description: "Butter", quantity: 2, price: 6, total: 12 },
+];
+
+//here is one way to add up to the line items total using reduce()...
+
+// console.log(lineItems.reduce((acc, item) => acc + item.total, 0));
+
+//This works, but is less composable..A better alternative is to first map() to get the total...
+
+//another way..
+// console.log(lineItems.map((li) => li.total)); //map returns a new array...
+// console.log(lineItems.map((li) => li.total).reduce((sum, val) => sum + val, 0));
+
+//Example 3:
+
+//Find the Maximum value....
+
+//While reduce() is used for summing, it doesn't have to be...
+
+//the accumulatior can be any value:number, null, undefined, array, pojo,even a promise...
