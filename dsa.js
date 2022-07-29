@@ -347,10 +347,71 @@ function fibonacci(n) {
   return fib;
 }
 
-console.log(fibonacci(2)); //[0,1]
-console.log(fibonacci(3)); //[0,1,1]
-console.log(fibonacci(7)); //[0,1,1,2,3,5,8]
+// console.log(fibonacci(2)); //[0,1]
+// console.log(fibonacci(3)); //[0,1,1]
+// console.log(fibonacci(7)); //[0,1,1,2,3,5,8]
 
 //service workers are a proxy between browser and network,service worker can redirect requests to a cache,enabling offline access...
 
 //web workers are general purpose scripts that enable us to offload processor intensive work from the main thread..
+
+//factorial of number...
+
+//In mathematics, the factorial of a non-negative integer n is the product of all positive integers less than or equal to n.
+
+// the factorial of 0 and 1 is 1...
+
+const factorialNumber = (n) => {
+  let result = 1;
+  for (let i = 2; i <= n; i++) {
+    result *= i;
+  }
+
+  return result;
+};
+
+// console.log(factorialNumber(5)); //120
+// console.log(factorialNumber(2)); //2
+// console.log(factorialNumber(0)); //1
+
+// is Prime number problem.....
+
+// A prime number is a number that is only divisible by itself and 1.
+
+const isPrime = (number) => {
+  if (number < 0) return false;
+  if (number === 0 || number === 1) return "neither prime nor composite";
+  for (let i = 2; i < number; i++) {
+    if (number % i === 0) {
+      return false;
+    }
+  }
+  return true;
+};
+
+// console.log(isPrime(2)); //true
+// console.log(isPrime(10)); //false
+// console.log(isPrime(1)); //false
+// console.log(isPrime(0)); //false
+// console.log(isPrime(17)); //true
+// console.log(isPrime(1711)); //false
+// console.log(isPrime(-1)); //false
+
+//optimize the primality test...
+
+const isOptimizeSolutionPrime = (number) => {
+  if (number < 0) return false;
+  if (number === 0 || number === 1) return "neither prime nor composite";
+  for (let i = 2; i <= Math.sqrt(number); i++) {
+    if (number % i === 0) {
+      return false;
+    }
+  }
+  return true;
+};
+
+console.log(isOptimizeSolutionPrime(2)); //true
+console.log(isOptimizeSolutionPrime(10)); //false
+console.log(isOptimizeSolutionPrime(1));
+console.log(isOptimizeSolutionPrime(0));
+console.log(isOptimizeSolutionPrime(-2));
